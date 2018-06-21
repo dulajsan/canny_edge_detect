@@ -18,7 +18,13 @@ int main(int argc,char** argv){
                 return -1;
         }
 
-	
+	// -- convert to gray scale
+	cvtColor(img_1,img_1_gray,CV_BGR2GRAY);
+	cvtColor(img_2,img_2_gray,CV_BGR2GRAY);
+
+	// -- blur image with 3*3 filter and reduce noise
+	blur(img_1_gray,img_1_gray,Size(3,3));
+	blur(img_2_gray,img_2_gray,Size(3,3));
 	
 
 }
